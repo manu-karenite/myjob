@@ -1,0 +1,37 @@
+.parentDiv {
+  margin: 10px 0px;
+}
+.homeOuter {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
+  flex-wrap: wrap;
+}
+
+.heroImage {
+  width: 500px;
+}
+.right {
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.one {
+  font-family: "Asap", sans-serif;
+  font-size: 30px;
+  word-wrap: normal;
+  text-align: center;
+  line-height: 1.5;
+}
+.custom {
+  font-weight: bolder;
+  font-style: italic;
+}
+.two {
+  text-align: center;
+  padding: 20px;
+}
