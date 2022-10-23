@@ -1,6 +1,7 @@
 import React from "react";
-import NavBar from "./Components/Navbar/NavBar.js";
-import { Routes, Route, useParams } from "react-router-dom";
+import { Toaster } from "react-hot-toast";
+
+import { Routes, Route, Navigate } from "react-router-dom";
 import Login from "./Pages/Company/Login.js";
 import Register from "./Pages/Company/Register.js";
 import Home from "./Pages/Company/Home.js";
@@ -10,11 +11,13 @@ import Home from "./Pages/Company/Home.js";
 const App = () => {
   return (
     <>
-      <NavBar />
+      <Toaster position="top-center" />
+      {/* <NavBar /> */}
       <Routes>
         <Route path="/company" exact element={<Home />} />
         <Route path="/company/login" exact element={<Login />} />
         <Route path="/company/register" exact element={<Register />} />
+        <Route path="*" element={<Navigate to="/company/login" replace />} />
       </Routes>
     </>
   );
