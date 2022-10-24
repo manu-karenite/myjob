@@ -94,7 +94,14 @@
 
   color: #1e1e1e;
 }
-
+.title1 {
+  padding-top: 20px;
+  font-family: "Montserrat";
+  font-style: normal;
+  /* font-weight: 800; */
+  font-size: 20px;
+  line-height: 150.4%;
+}
 .not_title {
   margin-top: 40px;
 }
