@@ -26,14 +26,14 @@ const Login = () => {
     }
 
     companyLogin(email, password)
-      .then((res) => toast.success(res.body))
+      .then((res) => toast.success(res?.body))
       .catch((err) => {
         toast.error(
           err?.response?.data !== undefined
             ? err?.response?.data
             : "Error Handling Requests. Please Try again after some time."
         );
-        setEmail("");
+
         setPassword("");
       });
   };

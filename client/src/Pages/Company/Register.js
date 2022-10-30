@@ -5,7 +5,7 @@ import LogoWhite from "../../Assets/Images/whitelogo.svg";
 import Button_4240CC from "../../Components/Buttons/Button_4240CC.js";
 import { toast } from "react-hot-toast";
 import { validateEmail } from "../../Utilities/functions.js";
-import { companyLogin } from "../../API/Company/auth.js";
+import { companyRegister } from "../../API/Company/auth.js";
 import ReCAPTCHA from "react-google-recaptcha";
 
 const Register = () => {
@@ -31,8 +31,16 @@ const Register = () => {
       toast.error("Please enter a valid email address");
       return;
     }
-
-    console.log(name, email);
+    console.log("data sending");
+    companyRegister(email, name)
+      .then((res) => toast.success(res.data))
+      .catch((err) => {
+        toast.error(
+          err?.response?.data !== undefined
+            ? err?.response?.data
+            : "Error Handling Requests. Please Try again after some time."
+        );
+      });
   };
   function onChange(value) {
     if (value !== null || value !== undefined) {
